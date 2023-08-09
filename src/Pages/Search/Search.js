@@ -16,7 +16,7 @@ const Search = ({ pinkOn }) => {
     const { data } = await axios.get(
       `https://api.themoviedb.org/3/search/${
         type ? "tv" : "movie"
-      }?api_key=15a21116c001e1c4675e66aa4fea25b7&language=en-US&query=${searchText}}&page=${page}&include_adult=false`
+      }?api_key={api_key}&language=en-US&query=${searchText}}&page=${page}&include_adult=false`
     );
     setContent(data.results);
     setNumberofpages(data.total_pages);
