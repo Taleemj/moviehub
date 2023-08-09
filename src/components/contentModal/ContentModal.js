@@ -59,13 +59,13 @@ export default function ContentModal({ children, media, id }) {
   };
   const fetchData = async () => {
     const { data } = await axios.get(
-      `https://api.themoviedb.org/3/${media}/${id}?api_key=15a21116c001e1c4675e66aa4fea25b7&language=en-US`
+      `https://api.themoviedb.org/3/${media}/${id}?api_key={api_key}&language=en-US`
     );
     setContent(data);
   };
   const fetchVideo = async () => {
     const { data } = await axios.get(
-      `https://api.themoviedb.org/3/${media}/${id}/videos?api_key=15a21116c001e1c4675e66aa4fea25b7&language=en-US`
+      `https://api.themoviedb.org/3/${media}/${id}/videos?api_key={api_key}&language=en-US`
     );
     setVideo(data.results[0]?.key);
   };
